@@ -32,7 +32,10 @@ $(document).ready(function() {
     $('#station-selection').bind('keyup change', function() {
         $('#observation-filter').submit();
     });
-    if ($('#satellite-selection').val() || $('#observer-selection').val() || $('#station-selection').val()) {
+    if (window.location.hash == "#collapseFilters") {
+    
+        $('#collapseFilters').hide()
+    } else if ($('#satellite-selection').val() || $('#observer-selection').val() || $('#station-selection').val()) {
 
         $('#collapseFilters').show();
     }
